@@ -12,11 +12,13 @@ public class Locator8 {
         driver.manage().window().maximize();
         driver.get("https://itstep.dp.ua/ru");
         Thread.sleep(2000);
-        driver.findElements(By.xpath("//div[@class='re-home-adult__image-box']/child::picture/child::source/following-sibling::img")).get(2).click();
-//        System.out.println(driver.findElement(By.xpath("//h1[@class='children-page-new__title']")).getText());
+        //Находим элемент "Университет" //img[@class='re-home-adult__img re-home-adult__img--university']
+        driver.findElement(By.xpath("//img[@class='re-home-adult__img re-home-adult__img--university']"));
+        //Используем навигацию для поиска элемента "Програмирование".
+//        driver.findElement(By.xpath("//img[@class='re-home-adult__img re-home-adult__img--university']/../../../../ancestor::div/child::div/child::div/child::div/following-sibling::a/child::h3/following-sibling::h3/following-sibling::div/child::picture/child::source/following-sibling::img")).click();
+        //Второй элемент "Програмирование" можно найти альтернативным способом
+//        driver.findElements(By.xpath("//div[@class='re-home-adult__image-box']/child::picture/child::source/following-sibling::img")).get(2).click();
 
-
-//
 //        driver.quit();
     }
 
