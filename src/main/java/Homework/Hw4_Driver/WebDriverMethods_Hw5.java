@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class WebDriverMethods_Hw5 {
         static final By comparisonВutton = By.xpath("//span[contains(text(), 'К сравнению')]");
         static final By windowСomparison = By.xpath("//span[contains(text(), 'Сравнение')]");
         static final By belyyMedved = By.xpath("//a[contains(text(), 'Белый медведь 6х5х6см')]");
+        static final By headerLogoImg = By.xpath("//img[@class='header-logo-img']");
+        static final By katalog = By.xpath("//a[@class='site-menu__link'][1]");
+
 
         private static class Url {
             private static final String uhomki = "https://uhomki.com.ua";
@@ -25,10 +29,10 @@ public class WebDriverMethods_Hw5 {
 
 
             public static void main(String[] args) throws InterruptedException {
-                FirefoxOptions options = new FirefoxOptions();
-                options.addArguments("--disable-notifications");
+
                 System.setProperty("webdriver.firefox.driver", "C:\\geckodriver_v0.33.0_win_aarch64\\geckodriver.exe");
                 WebDriver driver = new FirefoxDriver();
+                Actions actions = new Actions(driver);
                 driver.manage().window().maximize();
                 driver.get(uhomki);
                 Thread.sleep(2000);
@@ -42,20 +46,17 @@ public class WebDriverMethods_Hw5 {
                 Thread.sleep(4000);
                 driver.findElement(Locastors.comparisonВutton).click();
                 Thread.sleep(4000);
-                driver.findElement(Locastors.windowСomparison).click();
+                WebElement search2 = driver.findElement(Locastors.search);
+                search2.sendKeys("Медведь");
                 Thread.sleep(4000);
-                driver.navigate().back();
-                Thread.sleep(2000);
-                search.clear();
-                search.sendKeys("Медведь"); //поисковик повторно текст не принимает
-                Thread.sleep(4000);
-                search.sendKeys(Keys.ENTER);
+                search2.submit();
                 Thread.sleep(4000);
                 driver.findElement(Locastors.belyyMedved).click();
                 Thread.sleep(4000);
                 driver.findElement(Locastors.comparisonВutton).click();
                 Thread.sleep(4000);
                 driver.findElement(Locastors.windowСomparison).click();
+                Thread.sleep(4000);
 
                 driver.quit();
 
