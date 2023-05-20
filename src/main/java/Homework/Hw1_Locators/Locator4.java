@@ -22,6 +22,7 @@ public class Locator4 {
 //        Select akvariumistikaSelect = new Select(akvariumistikaElement);
 //        //selectByVisibleText(); выбор элемента с определенным тесктом
 //        akvariumistikaSelect.selectByVisibleText("Аквариумы");
+
 //
 //        driver.quit();
     }

@@ -14,17 +14,17 @@ public class WebElementLessons {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         /*driver.get("https://www.guinnessworldrecords.com/search");
-        WebElement acceptCookies = driver.findElement(By.xpath("//button[text() = 'Continue with Recommended Cookies']"));
-        acceptCookies.click();
+        WebElement acceptCookies = driver.findElement(By.xpath("//button[text() = 'Continue with Recommended Cookies']")); //создаем объект вебэлемента
+        acceptCookies.click(); // вызываем к вебэлементу методы (например click)
 
-        WebElement searchField = driver.findElement(By.id("search-term"));
-        searchField.sendKeys("Most handstand push ups");
+        WebElement searchField = driver.findElement(By.id("search-term")); //создаем вебэлемент
+        searchField.sendKeys("Most handstand push ups"); // теперь к этому методу можно вызвать метод "ввода текста"
         Thread.sleep(2000);
-        searchField.clear();
+        searchField.clear();//удаляет все, что было введено в поле
         Thread.sleep(2000);
         searchField.sendKeys("Most pull ups");
         Thread.sleep(2000);
-        searchField.sendKeys(Keys.ENTER);*/
+        searchField.sendKeys(Keys.ENTER);*/ // имитируем нажатие клавиши ENTER
 
  /*       driver.get("https://rozetka.com.ua/ua/");
         WebElement search = driver.findElement(By.xpath("//input[@placeholder='Я шукаю...']"));

@@ -12,29 +12,30 @@ import java.util.Set;
 public class WebDriverMethods {
     public static void main(String[] args) throws InterruptedException {
 
-        ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions(); // опция при создании драйвера, которая позволяет блокировать модальное окно.
+                                                     // Передается в стр.20 "new ChromeDriver(options)";
         options.addArguments("--disable-notifications");
 
         System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
+        driver.manage().window().maximize(); // ткрыть окно на весь экран
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // время ожидания драйвером элемента
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10)); // ожидание загрузки страницы
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10)); // неявное ожидание отработки скриптов
 
         //конф драйвера. Работа с Cookies.
-        /*driver.get("https://itstep.dp.ua/ru");
+//        driver.get("https://itstep.dp.ua/ru");
+//
+//        System.out.println(driver.manage().getCookies());
+//        Set<Cookie> set = driver.manage().getCookies();
+//        for (Cookie cookie:set){
+//            System.out.println(cookie);
+//        }
+//        System.out.println("Количество файлов cookie: "+set.toArray().length);
+//        System.out.println("Отдельный файл cookie: "+ set.toArray()[4]);
+//        driver.quit();
 
-        System.out.println(driver.manage().getCookies());
-        Set<Cookie> set = driver.manage().getCookies();
-        for (Cookie cookie:set){
-            System.out.println(cookie);
-        }
-        System.out.println("Количество файлов cookie: "+set.toArray().length);
-        System.out.println("Отдельный файл cookie: "+ set.toArray()[4]);
-        driver.quit();*/
-
-        //getCurrentUrl()
+        //getCurrentUrl() Получаем Url какой либо страницы и выводим на консоль
         /*driver.get("https://rozetka.com.ua/ua/");
         Thread.sleep(2000);
         System.out.println(driver.getCurrentUrl());
@@ -45,7 +46,7 @@ public class WebDriverMethods {
         driver.quit();
 */
 
-//getTitle()
+//getTitle() // Получение названия страницы и выводим на консоль
        /* driver.get("https://rozetka.com.ua/ua/");
         Thread.sleep(2000);
         System.out.println(driver.getTitle());
@@ -55,14 +56,14 @@ public class WebDriverMethods {
         System.out.println(driver.getTitle());
         driver.quit();*/
 
-//getPageSource()
+//getPageSource() // Получение дом дерево страницы "весь код страницы"
        /* driver.get("https://rozetka.com.ua/ua/");
         Thread.sleep(2000);
         System.out.println(driver.getPageSource());
         Thread.sleep(2000);
         driver.quit();*/
 
-        //navigate
+        //navigate // Навигация по страницам браузера
       /*  driver.get("https://rozetka.com.ua/ua/");
         Thread.sleep(2000);
         Thread.sleep(2000);
@@ -77,7 +78,7 @@ public class WebDriverMethods {
 
         //Работа с окнами 1 вариант
         /*driver.navigate().to("https://itstep.dp.ua/");
-        System.out.println(driver.getWindowHandle());
+        System.out.println(driver.getWindowHandle()); //дискриптор окна (идентификационный номер открытого окна)
         ((JavascriptExecutor)driver).executeScript("window.open()");
         System.out.println(driver.getWindowHandles());
         driver.navigate().to("https://rozetka.com.ua/ua/");

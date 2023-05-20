@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite" parallel="tests" thread-count="2">
+    <test name="Suite1">
+        <classes>
+            <class name="Hw10_TestNG2.parallelismus.Suite.ParallelClass3"/>
+            <class name="Hw10_TestNG2.parallelismus.Suite.ParallelClass4"/>
+        </classes>
+    </test>
+    <test name="Suite2">
+        <classes>
+            <class name="Hw10_TestNG2.parallelismus.Suite.ParallelClass5"/>
+            <class name="Hw10_TestNG2.parallelismus.Suite.ParallelClass6"/>
+        </classes>
+    </test>
+
+</suite>

@@ -21,7 +21,7 @@ public class DragNdropEx {
                 clickAndHold().moveToElement(driver.findElement(By.xpath("//i[@class='menu-icon dots-icon']")))
                 .release().build().perform();
         Thread.sleep(6000);
-       System.out.println(driver.getTitle());
+        System.out.println(driver.getTitle());
         System.out.println("============");
         driver.findElement(By.xpath("//a[@id='close-btn']")).click();
         Thread.sleep(3000);
